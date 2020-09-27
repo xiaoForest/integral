@@ -1,9 +1,11 @@
 .DS_Store
 node_modules/
+api/
 /dist/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+人事积分管理接口.txt
 
 # Editor directories and files
 .idea
