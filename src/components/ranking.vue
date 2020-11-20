@@ -57,7 +57,7 @@
             <div class="box">
               <div class="num">{{ index + 1 }}</div>
               <div class="img">
-                <img :src="item.tImg || require('@/assets/2.png')" alt="" />
+                <img :src="item.Img || require('@/assets/2.png')" alt="" />
               </div>
               <div class="name">{{ item.BuMen }} {{ item.Team }}</div>
             </div>
@@ -169,7 +169,7 @@ export default {
         return this.list;
       } else {
         let m = this.list.slice(0);
-        m.splice(m.length - 1, 1);
+        m.splice(m.length, 0);
         return m;
       }
     },
@@ -229,7 +229,7 @@ export default {
         return this.listTeam;
       } else {
         let m = this.listTeam.slice(0);
-        m.splice(m.length - 1, 1);
+        m.splice(m.length, 0);
         return m;
       }
     },

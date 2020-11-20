@@ -2,7 +2,7 @@
   <div class="home">
     <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
       <div class="forestmod">
-        <div class="tit">积分兑换</div>
+        <div class="tit">小积累大惊喜，积极参与吧</div>
         <AntCollectEnergy @pf="parent" ref="mychild" />
         <div class="seagull"><img src="@/assets/seagull.png" alt="" /></div>
         <div class="cloud cloud1"><img src="@/assets/cloud.png" alt="" /></div>
@@ -80,8 +80,10 @@ body {
   .tit {
     color: #fff;
     font-size: 30px;
-    line-height: 1;
-    padding: 80px 0;
+    width: 50%;
+    margin: 10px auto;
+    line-height: 1.2;
+    padding: 70px 0;
     font-weight: bold;
     text-align: center;
   }

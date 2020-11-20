@@ -19,6 +19,8 @@ import { Toast } from 'vant';
 import { Empty } from 'vant';
 import { PullRefresh } from 'vant';
 import { Sticky } from 'vant';
+import { NoticeBar } from 'vant';
+
 
 Vue.config.productionTip = false
 Object.keys(custom).forEach(key => { Vue.filter(key, custom[key])})
@@ -29,7 +31,7 @@ Vue.use(Lazyload);
 Vue.use(Tabbar);
 Vue.use(TabbarItem);
 Vue.use(VanImage);
- 
+Vue.use(NoticeBar);
 Vue.use(List);
 Vue.use(Notify);
 Vue.use(Toast);
