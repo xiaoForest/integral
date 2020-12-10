@@ -128,7 +128,7 @@ export default {
       if (index == this.changeSelectStyle) {
         return false;
       }
-      clearTimeout(this.timer)
+      clearTimeout(this.timer);
       this.changeSelectStyle = index;
       this.smin = sn;
       this.smax = sx;
