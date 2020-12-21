@@ -16,6 +16,7 @@
       <div class="circle-wrod">{{ item.text }}</div>
     </div>
     <div class="my-integral">
+      <div v-if="Christmas" class="christmas"></div>
       <div class="img">
         <img :src="me.WeChatImg || require(`@/assets/1.png`)" alt="" />
       </div>
@@ -29,6 +30,7 @@
       <div class="btns" @click="btnSendSign()">
         <img :src="require(`@/assets/day${me.isSign || 0}.png`)" alt="" />
       </div>
+      <div v-if="Christmas" class="hua"></div>
     </div>
   </div>
 </template>
@@ -82,6 +84,7 @@ export default {
         100,
         0,
       ],
+      Christmas: false,
     };
   },
   computed: {
@@ -154,8 +157,30 @@ export default {
           let datalist = res.data.data.dataList;
           this.integral = datalist;
           this.createList(datalist.length);
-          console.log("getPersonal" + this.me.Total);
-          console.log(res);
+          if (
+            res.data.data.WeChatImg ==
+            "https://wework.qpic.cn/wwhead/duc2TvpEgSTPk74IwG7BszDtD6ArBYUL9oNuzStWYafPC8GVzZXhYsU4wv9x5bicyyF9KEtsGbVw/0"
+          ) {
+            console.log("高军", res.data.data.WeChatImg);
+            Toast("祝军爷圣诞快乐 恭贺新禧 (>^ω^<)");
+            this.Christmas = true;
+          }
+          if (
+            res.data.data.WeChatImg ==
+            "https://wework.qpic.cn/wwhead/duc2TvpEgSTPk74IwG7Bs7XVemdHicNuBgzicUNkok6dib3dtoJPUVWKLvibzLibF4sWhfxdVZM5wxzQ/0"
+          ) {
+            console.log("晶晶", res.data.data.WeChatImg);
+            Toast("祝晶晶圣诞快乐 恭贺新禧 (>^ω^<)");
+            this.Christmas = true;
+          }
+          if (
+            res.data.data.WeChatImg ==
+            "http://wework.qpic.cn/bizmail/ymJUicFqZ3oBco62gQIdNG50DKereSgg6vG35Plduw8lwMiarSSNrvVw/0"
+          ) {
+            console.log("琪姐", res.data.data.WeChatImg);
+            Toast("祝淇姐圣诞快乐 恭贺新禧 (>^ω^<)");
+          }
+
           this.growing();
         })
         .catch((err) => {
@@ -170,7 +195,7 @@ export default {
       const r = item.r * 2;
       // console.log(item);
       return {
-        top: `${item.y/160}rem`,
+        top: `${item.y / 160}rem`,
         left: `${item.x / 45}rem`,
         width: `${r}px`,
         height: `${r}px`,
@@ -328,6 +353,18 @@ export default {
         width: 100%;
       }
     }
+    .hua {
+      position: relative;
+      top: -225px;
+      left: 160px;
+      right: 100px;
+      background: url(../assets/hua.png) no-repeat;
+      width: 60px;
+      height: 113px;
+      background-size: 60px;
+      animation: zy 3s 1s linear infinite;
+      z-index: -1;
+    }
   }
   position: absolute;
   top: 260px;
@@ -347,6 +384,16 @@ export default {
     align-items: center;
     animation: mymove 1.5s;
     z-index: 2;
+    .christmas {
+      position: absolute;
+      top: -70px;
+      left: -60px;
+      background: url(../assets/maozi.png) no-repeat;
+      background-size: 142px;
+      width: 142px;
+      height: 156px;
+      transform: scale(0.6);
+    }
     .img {
       width: 56px;
       height: 56px;
@@ -454,6 +501,21 @@ export default {
 
   to {
     transform: scale3d(1, 1, 1) translateX(-50%);
+  }
+}
+
+@keyframes zy {
+  0% {
+    transform: rotate(-25deg);
+  }
+  50% {
+    transform: rotate(25deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+  0% {
+    transform: rotate(0);
   }
 }
 </style>

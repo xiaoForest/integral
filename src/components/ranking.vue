@@ -28,9 +28,18 @@
             <div class="box">
               <div class="num">{{ index + 1 }}</div>
               <div class="img">
-                <img :src="item.Img || require('@/assets/1.png')" alt="" />
+                <img
+                  :src="
+                    item.uName != '高军'
+                      ? item.Img || require('@/assets/1.png')
+                      : require('@/assets/mao.jpg')
+                  "
+                  alt=""
+                />
               </div>
-              <div class="name">{{ item.uName }}</div>
+              <div class="name">
+                {{ item.uName != "高军" ? item.uName : "刘欣" }}
+              </div>
             </div>
             <div class="grade">{{ item.L_CurrentPoints }}分</div>
           </div>
@@ -143,7 +152,6 @@ export default {
   computed: {},
   methods: {
     onRefresh() {
- 
       // 清空列表数据
       console.log("清空数据" + this.active);
       clearTimeout(this.timer1);
