@@ -36,6 +36,7 @@ export default {
 .hint {
   color: #cecece;
   padding: 14px 4px 0;
+  font-size: 14px;
   background: #fff;
 }
 </style>
