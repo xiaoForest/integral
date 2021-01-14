@@ -1,6 +1,7 @@
 <template>
   <div>
     <Head :title="msg" />
+    <div class="hint">(图片仅供参考，具体以实物为准)</div>
     <div class="changewrap"><Gift :tit="txt"/></div>
     <Footer />
   </div>
@@ -32,7 +33,9 @@ export default {
 </script>
 
 <style lang="scss">
-.changewrap {
-    // margin: 20px 20px 110px  ;
+.hint {
+  color: #cecece;
+  padding: 14px 4px 0;
+  background: #fff;
 }
 </style>
